@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="latitude symbol">
+  <!-- Circle (Earth outline) -->
+  <circle cx="64" cy="64" r="60" fill="none" stroke="currentColor" stroke-width="4"/>
+
+  <!-- Latitude lines (horizontal) -->
+  <line x1="20" y1="64" x2="108" y2="64" stroke="currentColor" stroke-width="4"/>
+  <line x1="32" y1="40" x2="96" y2="40" stroke="currentColor" stroke-width="3"/>
+  <line x1="32" y1="88" x2="96" y2="88" stroke="currentColor" stroke-width="3"/>
+</svg>

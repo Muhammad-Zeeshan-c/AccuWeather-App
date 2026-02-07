@@ -1,0 +1,49 @@
+ @layer base {
+     * {
+         @apply p-0 m-0 box-border;
+        }
+    }
+
+
+ @layer component {
+    .primary-color {
+        background-color: #060C1A;
+    }
+
+    .secondary-color {
+        background-color: #0E1421;
+    }
+
+    .brand-color {
+        background-color: #742BEC;
+    }
+
+    .text-secondary {
+        color: #95979b;
+    }
+
+    .Story-font {
+        font-family: "story Script";
+    }
+
+    .Roboto-font {
+        font-family: "Roboto";
+    }
+
+    .bg-transition-dark {
+        @apply bg-gradient-to-r from-[#060c1a] via-slate-700 to-[#060c1a];
+    }
+
+    .hf-card {
+    @apply p-[1px] w-[20%] h-[90%] flex flex-col justify-evenly rounded-2xl shrink-0 max-[770px]:w-[50%] max-lg:w-[25%];
+    }
+    .weekly-card{
+        @apply p-2 w-[12%] h-[100%] flex flex-col justify-evenly  rounded-2xl shrink-0 ;
+    }
+
+}
+
+
+
+ @import "tailwindcss";
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Story+Script&display=swap');

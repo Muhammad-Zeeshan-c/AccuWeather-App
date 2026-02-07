@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 24 24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="w-12 h-12 text-blue-500">
+  <path d="M3 8h10a4 4 0 1 0 0-8 " stroke-dasharray="30">
+    <animate attributeName="stroke-dashoffset"
+             from="30" to="0"
+             dur="1s"
+             repeatCount="indefinite" />
+  </path>
+  <path d="M3 16h13a3 3 0 1 1 0 6" stroke-dasharray="30">
+    <animate attributeName="stroke-dashoffset"
+             from="30" to="0"
+             dur="1.2s"
+             repeatCount="indefinite" />
+  </path>
+  <path d="M3 12h17a2 2 0 1 0 0-4" stroke-dasharray="30">
+    <animate attributeName="stroke-dashoffset"
+             from="30" to="0"
+             dur="0.8s"
+             repeatCount="indefinite" />
+  </path>
+</svg>

@@ -1,0 +1,12 @@
+<!-- White filled Google Maps style pin with transparent inner circle -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" aria-hidden="true" role="img">
+  <path d="M12 2
+           C8.13 2 5 5.13 5 9
+           c0 4.97 6 11 7 12
+           c1-1 7-7.03 7-12
+           c0-3.87-3.13-7-7-7z
+           M12 6.6
+           a2.4 2.4 0 1 1 0 4.8
+           a2.4 2.4 0 1 1 0-4.8z"
+        fill="white" fill-rule="evenodd" clip-rule="evenodd"/>
+</svg>
