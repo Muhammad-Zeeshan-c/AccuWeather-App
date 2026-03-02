@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 128" width="160" height="128" role="img" aria-label="degrees Celsius">
+  <!-- Degree (hollow circle) -->
+  <circle cx="32" cy="40" r="12" fill="none" stroke="currentColor" stroke-width="6"/>
+
+  <!-- Square-bracket style C -->
+  <path d="M120 32H72L56 48V80L72 96H120"
+        fill="none" stroke="currentColor" stroke-width="12"
+        stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>

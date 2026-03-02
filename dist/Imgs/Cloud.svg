@@ -1,0 +1,24 @@
+<!-- Cloud outline, top part 50% opacity, transparent background -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+  <!-- top arcs (lighter) -->
+  <g fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.5">
+    <!-- left top arc -->
+    <path d="M12 30 A10 10 0 0 1 32 30" />
+    <!-- middle top arc -->
+    <path d="M24 24 A12 12 0 0 1 48 24" />
+    <!-- right top arc -->
+    <path d="M40 30 A8 8 0 0 1 56 30" />
+  </g>
+
+  <!-- main outline (opaque) -->
+  <g fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- bottom connector curve -->
+    <path d="M56 30
+             C60 40 52 48 36 48
+             C20 48 12 40 12 34" />
+    <!-- small connector on right to join top-right arc visually -->
+    <path d="M52 30 C54 34 50 38 40 38" />
+    <!-- small connector on left to join top-left arc visually -->
+    <path d="M20 38 C18 36 16 34 12 34" />
+  </g>
+</svg>

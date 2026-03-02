@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Forecastly Weather APP</title>
+</head>
+
+
+
+<body class="primary-color max-w-[1400px] mx-auto px-2.5 max-[600px]:p-1">
+
+
+    <!--Weather App-->
+    <nav
+        class="w-full  h-[90px] mt-2.5 rounded-2xl py-2 flex justify-between max-[650px]:flex-col max-[650px]:h-[120px] max-[650px]:justify-between">
+        <div
+            class="logo  h-full w-[20%] flex items-center max-[650px]:self-center max-[650px]:h-[45px] max-[650px]:w-[40%]">
+            <img src="imgs/Logo.svg" alt="" class="h-full w-[30%] max-[650px]:h-[60px]">
+            <span class="text-[28px] font-bold Story-font text-orange-500 max-[650px]:h-[60px]">Forecastly</span>
+        </div>
+
+        <div
+            class=" w-[80%] flex justify-end items-center gap-2 max-[650px]:w-full max-[650px]:h-[45px]  max-[500px]:w-full max-[500px]:h-[40px] max-[400px]gap-[1px]">
+            <!--Search Box-->
+            <div
+                class="searchBox secondary-color flex w-[40%] h-2/3 rounded-2xl items-center max-[650px]:h-[45px] max-[500px]:h-[40px] max-[500px]:w-[55%] max-[400px]:w-[60%]">
+                <div
+                    class="h-4/5 w-[15%] bg-[url(imgs/search.svg)] bg-no-repeat bg-center bg-contain invert max-[500px]:h-full">
+                </div>
+                <input class="searchedCity px-2 text-white h-full leading-normal min-w-0 flex-shrink ml-1 w-[85%] outline-none Roboto-font placeholder-gray-400 placeholder-width-[80%]
+                max-[600px]:w-[50%] max-[500px]:w-[45%] max-[500px]:h-full max-[500px]:placeholder:text-[12px]"
+                    type="text" placeholder="Search city...">
+            </div>
+
+            <button
+                class="search bg-white cursor-pointer hover:bg-slate-100 active:bg-slate-200 h-2/3 rounded-2xl w-[15%] text-black 
+            font-semibold Roboto-font  max-[650px]:h-[45px] max-[650px]:w[10%] max-[500px]:w-[14%] max-[500px]:h-[40px] max-[400px]:text-[14px]">
+                Search
+            </button>
+
+            <button
+                class="currentLocation  bg-blue-950 hover:bg-blue-800 active:bg-blue-600 cursor-pointer h-2/3  mx-[2px] w-[20%] rounded-2xl flex items-center justify-evenly px-[2px] Roboto-font font-extrabold text-white max-[1075px]:w-[25%] max-[880px]:w-[30%] max-[880px]:text-[14px] max-[650px]:h-[45px]  max-[500px]:w-[20%] max-[500px]:h-[40px] max-[400px]:w-[22%]">
+                <img src="imgs/Location.svg" alt="" class="h-[90%] invert w-[20%] max-[600px]:w-[20%]">
+                <span><span class="max-[500px]:hidden">Current</span> Location</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="flex flex-wrap shrink-0 w-full mt-2.5 justify-evenly">
+        <div class="hero-box secondary-color h-[350px] w-[60%] rounded-2xl   px-[1%] py-[10px] flex flex-col  relative
+        max-lg:w-[58%] max-lg:h-[400px] max-md:w-full">
+            <div class="hero-header w-full h-[40px] rounded-2xl flex justify-between">
+                <div
+                    class=" brand-color h-full rounded-2xl pl-[2px] pr-[8px] w-auto inline-flex items-center justify-evenly font-semibold Roboto-font text-white">
+                    <img src="Imgs/Locationicon.svg" alt="" class="h-[70%] w-auto">
+                    <span class="country"></span>
+                </div>
+                <div
+                    class="slider-btn primary-color min-w-[90px] w-[10%] max-w-[150px] h-full rounded-2xl font-semibold text-white flex justify-center items-center px-[4px]">
+                    ----</div>
+            </div>
+
+            <div class=" w-full h-full mt-2.5 flex flex-row 5xl">
+                <div class="weather-info text-white w-[55%] px-[2%] flex flex-col justify-evenly relative
+                 max-lg:gap-20 ">
+
+                    <div class="flex flex-col Story-font">
+                        <div>
+                            <div class="CityName text-5xl max-[500px]:text-4xl">
+                            </div>
+                        </div>
+
+                        <div class="Weather-condition text-xl max-[500px]:text-[14px]">
+                        </div>
+
+                        <div class="flex gap-1.5">
+                            <span>Lat: <span class="Lat"></span>&deg</span>
+                            <span>Lon: <span class="Lon"></span>&deg</span>
+
+                        </div>
+                    </div>
+
+                    <div class=" flex flex-col justify-center gap-2.5 relative z-20 top-[-10%]
+                    ">
+                        <div class="temp-unit text-5xl Roboto-font font-bold"><span class="weather-tmp"> </span>
+                            &degC
+                        </div>
+                        <div class="flex gap-2">
+                            <span>H: <span class="high-temp"></span> &degC</span>
+                            <span>L: <span class="low-temp"></span> &degC</span>
+                        </div>
+                    </div>
+
+
+                    <!--cloud img-->
+                    <img src="imgs/Cloud.svg" alt="" class="absolute top-[40%] right-[10%] w-[50px] h-[100px] z-10">
+                </div>
+
+                <div class="weather-logo w-[45%] flex flex-col items-center justify-evenly text-white
+                max-lg:gap-15 ">
+
+                    <div class="flex flex-col justify-center gap-1 relative z-20 Story-font ">
+                        <div class="day text-5xl max-[500px]:text-[40px]">Day</div>
+                        <div class="date">DD MM , YYYY</div>
+                        <div class="Time font-semibold">Time</div>
+                    </div>
+
+                    <div class="h-1/2 relative top-[-20%]">
+                        <img src="https://openweathermap.org/img/wn/02d@4x.png" alt="" class="weather-img h-[90%]">
+                        <div class="weather-feels relative top-[-15%] text-xl Story-font font-extralight">
+                            <span>Feels Like <span class="temp-feels">--</span> &degC</span>
+                            <div class="Weather-condition">--------</div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div
+            class="hourly-forecast secondary-color h-[350px] w-[39%] rounded-2xl relative p-2.5 flex flex-col gap-3 group  max-lg:w-[40%] max-lg:h-[400px] max-md:w-full max-md:h-[350px] max-md:mt-5">
+            <!--Hourly forecast card-->
+            <div class="hf-header w-full text-white text-3xl font-thin Story-font">Today</div>
+            <div class="hf-main bg-transition-dark flex flex-1 rounded-xl text-white items-center overflow-x-hidden ">
+                <div
+                    class="left-btn absolute  w-14 h-14 left-0 top-1/2 rounded-full hidden cursor-pointer bg-black opacity-70 group-hover:flex z-20">
+                    <img src="imgs/Left.svg" class="w-full h-full" alt="">
+                </div>
+
+                <div class="card-wrapper scroll-smooth flex h-full
+                gap-2 w-full items-center">
+                </div>
+                <div
+                    class="right-btn absolute w-14 h-14 top-1/2 right-0 rounded-full hidden cursor-pointer bg-black opacity-70 group-hover:flex ">
+                    <img src="imgs/right.svg" class="w-full h-full" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="TodayHighlights mt-5 rounded-2xl w-[100%] flex flex-col  text-white">
+            <!--Highlights heading-->
+            <div class="text-2xl Story-font  w-full h-[50px] font-bold">Today's Highlights</div>
+
+            <div
+                class="Highlights w-full h-[270px] mt-2 flex flex-wrap justify-between max-[570px]:flex-col max-[570px]:h-auto max-[570px]:gap-4">
+
+
+                <div
+                    class="airQuality secondary-color w-[30%] h-full rounded-2xl p-2 
+                    max-[800px]:w-[40%] max-[600px]:w-[45%] max-[570px]:w-full max-[570px]:h-auto max-[570px]:px-[20px]">
+                    <div class="brand-color text-xl Story-font font-semibold inline-block p-1 rounded-2xl ">Air Quality
+                    </div>
+                    <div class="w-full h-[40px] mt-2 flex justify-between items-center">
+                        <div class="Roboto-font text-xl font-semibold">AQI:
+                            <span class="AQI-val "></span>
+                        </div>
+
+                        <div class="AQI-des bg-gray-500 px-3 rounded-2xl"></div>
+                    </div>
+                    <div class="flex flex-row justify-between text-xl Roboto-font font-semibold max-[470px]:text-sm">
+                        <span>Gas</span>
+                        <span class="max-[570px]:text-[18px] max-[470px]:text-sm">Quantity <span
+                                class="font-normal">(µg/m <sup>3</sup>)</span></span>
+                    </div>
+                    <div class="AQI-Gases flex flex-col gap-1 text-secondary">
+                        <div class="flex justify-between mt-1">
+                            <Span>CO</Span>
+                            <span class="AQI-CO ">
+                                <span>µg/m<sup>3</sup></span>
+                            </span>
+                        </div>
+                        <div class=" flex justify-between">
+                            <Span class="">NO<sub>2</sub></Span><span class="AQI-NO2">
+                                <span>µg/m<sup>3</sup></span>
+                            </span>
+                        </div>
+                        <div class=" flex justify-between">
+                            <Span>O<sub>3</sub></Span><span class="AQI-O3">
+                                <span>µg/m<sup>3</sup></span>
+                            </span>
+                        </div>
+                        <div class=" flex justify-between">
+                            <Span>PM <sub>2</sub><sup>5</sup></Span><span class="AQI-PM5">
+                                <span>µg/m<sup>3</sup></span>
+                            </span>
+                        </div>
+                        <div class=" flex justify-between">
+                            <Span>NH <sub>3</sub></Span><span class="AQI-NH3">
+                                <span>µg/m<sup>3</sup></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div
+                    class="OtherCategories w-[65%] h-full flex justify-between
+                max-[800px]:w-[55%] max-[600px]:w-[50%] max-[570px]:w-full max-[570px]:flex-row max-[570px]:gap-4 max-[570px]:h-auto">
+
+
+                    <!-- CategoryX -->
+                    <div class="CategoryX w-[48%] h-full rounded-2xl text-white flex flex-col justify-between relative">
+                        <div class="Visibility h-[48%] w-full secondary-color rounded-2xl p-2">
+                            <div
+                                class="w-full text-xl Story-font font-semibold max-[650px]:text-center max-[470px]:text-base">
+                                Visibility</div>
+                            <div class=" w-full h-[70%] flex justify-between items-center">
+                                <div class=" h-[70%] w-[25%] max-[600px]:w-[30%]"><img src="Imgs/Visibility.svg"
+                                        class="object-contain object-center h-full w-full"></div>
+                                <div class="Visibility-value text-2xl max-[600px]:text-[20px] max-[470px]:text-base">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="Humidity h-[48%] w-full secondary-color rounded-2xl p-2">
+                            <div
+                                class="w-full text-xl Story-font font-semibold max-[650px]:text-center max-[470px]:text-base">
+                                Humidity</div>
+                            <div class=" w-full h-[70%] flex justify-between items-center">
+                                <div class=" h-[70%] w-[25%] max-[600px]:w-[30%]"><img src="Imgs/Humidity.svg"
+                                        class="object-contain object-center h-full w-full"></div>
+                                <div class="Humidity-value text-2xl max-[600px]:text-[20px] max-[470px]:text-base">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CategoryY -->
+                    <div class="CategoryY w-[48%] h-full flex flex-col justify-between">
+                        <div class="w-full h-[48%] secondary-color rounded-2xl p-2">
+                            <div
+                                class="w-full text-xl Story-font font-semibold max-[650px]:text-center max-[470px]:text-base">
+                                Wind Speed</div>
+                            <div class=" w-full h-[70%] flex justify-between items-center">
+                                <div class=" h-[70%] w-[25%] max-[600px]:w-[30%]"><img src="Imgs/Wind.svg"
+                                        class="object-contain object-center h-full w-full invert"></div>
+                                <div class="Wind-value text-2xl max-[600px]:text-[20px] max-[470px]:text-base"></div>
+                            </div>
+                        </div>
+
+                        <div class="w-full h-[48%] secondary-color rounded-2xl p-2">
+                            <div
+                                class="w-full text-xl Story-font font-semibold max-[650px]:text-center max-[470px]:text-base">
+                                Pressure</div>
+                            <div class=" w-full h-[70%] flex justify-between items-center">
+                                <div class=" h-[70%] w-[25%] max-[600px]:w-[30%]"><img src="Imgs/Pressure.svg"
+                                        class="object-contain object-center h-full w-full invert"></div>
+                                <div class="Pressure-value text-2xl max-[600px]:text-[20px] max-[470px]:text-base">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="wf w-full h-[450px] rounded-2xl mt-4 flex justify-evenly py-3 px-2 secondary-color max-[450px]:px-[1px] max-[800px]:flex-col max-[800px]:h-[650px] ">
+            <!--Weekly Forecast Card-->
+            <div
+                class="h-full w-[75%] relative text-white flex flex-col justify-between max-[800px]:w-full max-[800px]:h-[500px]">
+                <div class="w-full text-2xl Story-font font-semibold p-1 ">Weekly Forecast</div>
+                <div
+                    class="weeklyForecast bg-transition-dark w-full h-[65%]  mx-auto rounded-2xl p-4 flex flex-row shrink-0 overflow-hidden gap-5 relative group ">
+                    <div
+                        class="weekly-wrapper-class flex h-full w-full transition-transform duration-300 ease-out gap-2">
+                    </div>
+
+                    <div
+                        class="weekly-left-btn w-14 h-14 absolute top-1/2 left-[5%] bg-black opacity-70 hidden group-hover:flex items-center justify-center rounded-full">
+                        <img src="Imgs/Left.svg" alt="">
+                    </div>
+
+                    <div
+                        class="weekly-right-btn w-14 h-14 absolute top-1/2 right-[5%] bg-black opacity-70 hidden group-hover:flex items-center justify-center rounded-full">
+                        <img src="Imgs/right.svg" alt="">
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class=" bg-transition-dark w-full h-[20%] rounded-2xl px-4 py-2 flex justify-between relative ">
+                    <div class="flex gap-[10px] max-[500px]:gap-[2px]">
+                        <div class="flex flex-col">
+                            <div
+                                class="text-4xl Story-font font-semibold max-[570px]:text-3xl max-[450px]:text-2xl max-[400px]:text-xl">
+                                Tomorrow</div>
+                            <div class="Weather-condition text-secondary Story-font text-[18px]">Sunny</div>
+                        </div>
+                        <div class=" Roboto-font font-semibold text-2xl max-[500px]:text-xl max-[400px]:text-sm">
+                            <span class="weather-tmp"><!--Injected by JS--></span>
+                            &degC
+                        </div>
+                    </div>
+
+                    <div class="weather-img h-full min-h-[150px]  min-w-[150px] absolute top-[-50%]  right-0 ">
+                        <img src="https://openweathermap.org/img/wn/02d@4x.png" alt=""
+                            class="weather-img object-contain object-center h-full w-full ">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="sunrise-set h-[80%] w-[15%] my-auto text-white relative top-[5%] bg-transition-dark py-8 px-5 flex flex-col justify-between rounded-2xl
+
+                max-[800px]:flex-row 
+                max-[800px]:items-center 
+                max-[800px]:justify-between 
+                max-[800px]:h-[110px] 
+                max-[800px]:w-full 
+                max-[800px]:top-0
+                max-[800px]:py-2 
+                max-[800px]:px-4">
+
+                <!-- Sunrise -->
+                <div class="flex flex-col gap-1 max-[800px]:flex-row max-[800px]:items-center max-[800px]:gap-3">
+                    <span class="text-orange-500 w-9 h-9 max-[800px]:w-6 max-[800px]:h-6">☀</span>
+                    <div>
+                        <div class="text-secondary text-sm Story-font">Sunrise</div>
+                        <div class="text-2xl Story-font font-semibold leading-none">
+                            <span class="sunriseTime"></span>
+                            <span class="text-[11px] text-secondary">AM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sunset -->
+                <div class="flex flex-col gap-1 max-[800px]:flex-row max-[800px]:items-center max-[800px]:gap-3">
+                    <span class="text-red-500 w-9 h-9 max-[800px]:w-6 max-[800px]:h-6">🌙</span>
+                    <div>
+                        <div class="text-secondary text-sm Story-font">Sunset</div>
+                        <div class="text-2xl Story-font font-semibold leading-none">
+                            <span class="sunsetTime"></span>
+                            <span class="text-[11px] text-secondary">PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Length of Day -->
+                <div class="flex flex-col gap-1 max-[800px]:flex-row max-[800px]:items-center max-[800px]:gap-3">
+
+                    <div>
+                        <div class="text-secondary text-sm Story-font">Length of Day</div>
+                        <div class="text-2xl Story-font font-semibold leading-none dayLength"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </main>
+
+    <!--Loader while searching and loading results and making screen white-->
+    <div
+        class="loader w-24 h-24 border-8 border-white border-t-blue-500 border-b-blue-500 rounded-full animate-spin fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden">
+    </div>
+    <!--White screen while searching-->
+    <div class="whiteScreen fixed inset-0 w-screen  h-screen z-10 bg-white opacity-85 m-0 p-0 top-0 hidden"></div>
+
+
+
+    <script src="Script.js"></script>
+    <script src="CountryCodes.js"></script>
+</body>
+
+</html>
