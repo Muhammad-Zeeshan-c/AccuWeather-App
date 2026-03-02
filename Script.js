@@ -198,7 +198,7 @@ async function updateWeather(city,reportlat,reportlon){
 
         //Hourly Forecast of the day
 
-        let hourlyForecastUrl=`https://api.openweathermap.org/data/2.5/forecast/hourly?lat=${lat}&lon=${lon}&appid=${Key}&units=metric`;
+        let hourlyForecastUrl=`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${Key}&units=metric`;
 
         let hForecast=await fetch(hourlyForecastUrl);
         let hourlyForecast= await hForecast.json();
