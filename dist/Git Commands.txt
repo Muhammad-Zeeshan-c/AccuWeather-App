@@ -1,0 +1,43 @@
+git clone "Link here without hyphens"  //Used for cloning a github repo
+git status  //Used to check status of a repo like changes , untrackable etc
+git add "file here without hyphen" // use to add specific files in which changes are made
+git add . // use to add all in which changes are made
+
+git commit -m "Message here" //Used to commit all added files in which chages are made
+
+git push origin main  //Now used to uplaod code on github after on git 
+
+
+
+
+Create a new Repo
+
+1 First Make a Repo with git init
+make files do code etc
+2. Now add changes git add .
+3. Now commit git commit -m "Message here"
+
+4. Now to push on github first make a repository on Github lets say i made it Local repo
+5. Now git remote add origin https://github.com/Muhammad-Zeeshan-c/Local-Repo.git  //link of that repo made on github
+6. git push origin main
+
+we can also check remote on which we are git remote -v
+git branch -M to rename branch
+
+
+Branches
+1. Create new branches Gitcheckout -b "branch name"
+2. git checkout "branchname" to go to specific branch
+3. To delete a branch write git branch -d "branch name"
+4. git push origin "custom branch name" to merge in branch made
+
+
+git push -u origin main //to make short cut to use git push again and again without typing git push origin main
+
+
+Local Git Workflow
+Make Github repo
+Clone it
+Made changes
+Add changes 
+commit changes
